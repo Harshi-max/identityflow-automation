@@ -1,73 +1,253 @@
-# Welcome to your Lovable project
+# Self-Service Identity Lifecycle Automation
 
-## Project info
+A web-based system that automates the **Joiner–Mover–Leaver (JML)** identity lifecycle using simulated IAM workflows.  
+The platform provides a **self-service portal and chatbot assistant** to manage employee onboarding, role changes, and offboarding with approval workflows and audit logging.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This project simulates Identity and Access Management (IAM) automation **without connecting to production systems**, making it safe for demonstrations, learning, and hackathons.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+# Problem Statement
 
-**Use Lovable**
+Many organizations still manage **Joiner–Mover–Leaver processes manually**, which leads to:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Delays in employee onboarding
+- Incorrect role assignments
+- Security risks due to orphaned accounts
+- Lack of centralized audit tracking
 
-Changes made via Lovable will be committed automatically to this repo.
+This project demonstrates how **automation + workflow approvals** can streamline identity lifecycle management.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# Solution
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+This system provides a **self-service automation portal** that:
 
-Follow these steps:
+- Automates onboarding (Joiner)
+- Handles role/department changes (Mover)
+- Deactivates users and removes access (Leaver)
+- Uses simulated IAM APIs
+- Tracks all activities through audit logs
+- Includes a chatbot assistant for easy interaction
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Key Features
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 1. Joiner (Employee Onboarding)
+- Create a new employee account
+- Assign department and role
+- Simulate IAM account creation
+- Manager approval workflow
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## 2. Mover (Role / Department Change)
+- Update employee role
+- Simulate permission updates
+- Trigger approval workflow
+
+## 3. Leaver (Employee Offboarding)
+- Disable employee accounts
+- Revoke access permissions
+- Log the action in the audit system
+
+## 4. Approval Workflow
+- Requests are marked as **Pending**
+- Admin/Manager can **Approve or Reject**
+- Approved actions trigger simulated IAM operations
+
+## 5. IAM Simulation Layer
+
+Mock IAM APIs simulate identity management operations:
+
+- `createUser()`
+- `assignRole()`
+- `revokeAccess()`
+- `disableAccount()`
+
+These functions simulate real IAM delays and responses.
+
+## 6. Chatbot Assistant
+
+A simple chatbot helps users perform actions such as:
+
+- "Onboard a new employee"
+- "Change role"
+- "Deactivate employee"
+
+The chatbot guides users through the workflow.
+
+## 7. Audit Logs
+
+All actions are recorded with:
+
+- Timestamp
+- Action type
+- Employee
+- Status
+- Approver
+
+This provides **traceability and compliance visibility**.
+
+---
+
+# Tech Stack
+
+**Frontend**
+- Next.js 14
+- React
+- TailwindCSS
+- TypeScript
+
+**Backend**
+- Next.js API Routes (Serverless)
+
+**Deployment**
+- Vercel
+
+**Other**
+- Mock IAM simulation layer
+- In-memory / JSON data storage
+
+---
+
+# Project Architecture
+
+```
+User / Admin
+     |
+     v
+Self-Service Portal / Chatbot
+     |
+     v
+Approval Workflow System
+     |
+     v
+Mock IAM API Layer
+     |
+     v
+Audit Logging System
+```
+
+---
+
+# Project Structure
+
+```
+/app
+   /dashboard
+   /employees
+   /approvals
+   /chatbot
+
+/api
+   /onboard
+   /move
+   /leaver
+   /approve
+
+/lib
+   mockIAM.ts
+
+/components
+   EmployeeTable.tsx
+   ApprovalCard.tsx
+   ChatbotWidget.tsx
+   AuditLog.tsx
+```
+
+---
+
+# Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/identity-lifecycle-automation.git
+cd identity-lifecycle-automation
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open in browser:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+http://localhost:3000
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Deployment (Vercel)
 
-## What technologies are used for this project?
+1. Push the project to GitHub
+2. Go to **Vercel**
+3. Import the repository
+4. Click **Deploy**
 
-This project is built with:
+Vercel will automatically detect the **Next.js project** and deploy it.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+# Example Workflow
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Onboarding
 
-## Can I connect a custom domain to my Lovable project?
+1. Employee onboarding request submitted
+2. Manager approval required
+3. IAM simulation creates account
+4. Role assigned
+5. Audit log updated
 
-Yes, you can!
+### Role Change
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Role change request submitted
+2. Approval workflow triggered
+3. Permissions updated
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Offboarding
+
+1. Deactivation request
+2. IAM simulation disables account
+3. Access revoked
+4. Audit recorded
+
+---
+
+# Security Considerations
+
+- No real IAM system is connected
+- APIs are simulated
+- Designed only for **demonstration and learning**
+
+---
+
+# Future Improvements
+
+- Integrate with real IAM providers (Okta, Azure AD)
+- Add RBAC access control
+- Add database (PostgreSQL / MongoDB)
+- AI-powered chatbot
+- Slack / Teams integration
+- Email notification system
+
+---
+
+# Author
+
+Harshi
+
+---
+
+# License
+
+MIT License
