@@ -2,8 +2,6 @@
 
 A **Hackathon-ready Self-Service Identity Lifecycle Automation Platform** that automates the **Joiner–Mover–Leaver (JML) employee lifecycle**. The platform simulates enterprise Identity and Access Management workflows while remaining **fully safe (no connection to real IAM systems)**.
 
-## 🚀 Live Demo
-[Deployed on Vercel](https://identityflow-automation.vercel.app)
 
 ## 📋 Problem Statement
 
@@ -235,14 +233,24 @@ Bot: ✅ Onboarding request submitted successfully! Waiting for manager approval
 
 ## 📊 Dashboard Screenshots
 
+### Home page
+<img width="1866" height="732" alt="image" src="https://github.com/user-attachments/assets/3baf9484-d443-44ef-9604-b1290d1cdc40" />
+<img width="1876" height="759" alt="image" src="https://github.com/user-attachments/assets/93b7bb6e-4e3d-4a50-87aa-48affa7aa3f7" />
+<img width="1736" height="780" alt="image" src="https://github.com/user-attachments/assets/39efe252-b67b-4f42-b3ad-f5df938897d8" />
+
 ### Main Dashboard
-![Dashboard](https://via.placeholder.com/800x400?text=Dashboard+Screenshot)
+<img width="1907" height="762" alt="image" src="https://github.com/user-attachments/assets/2cc38c2f-b8f1-480e-916d-ca895b500246" />
+
 
 ### Approval Workflow
-![Approvals](https://via.placeholder.com/800x400?text=Approvals+Screenshot)
+<img width="1880" height="729" alt="image" src="https://github.com/user-attachments/assets/7ff439bc-e96e-40ad-add7-fa3818d0a387" />
+
+<img width="1913" height="674" alt="image" src="https://github.com/user-attachments/assets/13847c0c-df5a-4378-b2d0-7a5f5d6eeea5" />
 
 ### Chatbot Interface
-![Chatbot](https://via.placeholder.com/800x400?text=Chatbot+Screenshot)
+<img width="1611" height="730" alt="image" src="https://github.com/user-attachments/assets/19fe2113-ed86-4955-8d30-3ecc878ca58c" />
+<img width="1059" height="492" alt="image" src="https://github.com/user-attachments/assets/178833e3-79e6-4831-b291-644e13711061" />
+
 
 ## 🤝 Contributing
 
@@ -461,7 +469,7 @@ Vercel will automatically detect the **Next.js project** and deploy it.
 
 # Author
 
-Harshi
+Harshitha Arava
 
 ---
 
