@@ -1,4 +1,22 @@
 {
+  "/_not-found": "app/_not-found.js",
+  "/access-reviews/page": "app/access-reviews/page.js",
+  "/api/leaver/route": "app/api/leaver/route.js",
+  "/api/access-request/route": "app/api/access-request/route.js",
+  "/access-requests/page": "app/access-requests/page.js",
+  "/api/approve/route": "app/api/approve/route.js",
+  "/approvals/page": "app/approvals/page.js",
+  "/api/onboard/route": "app/api/onboard/route.js",
+  "/api/requests/route": "app/api/requests/route.js",
+  "/api/send-verification/route": "app/api/send-verification/route.js",
+  "/chatbot/page": "app/chatbot/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/login/page": "app/login/page.js",
+  "/employees/page": "app/employees/page.js",
+  "/employees/new/page": "app/employees/new/page.js",
+  "/api/move/route": "app/api/move/route.js",
   "/page": "app/page.js",
-  "/dashboard/page": "app/dashboard/page.js"
+  "/verify/page": "app/verify/page.js",
+  "/audit-logs/page": "app/audit-logs/page.js",
+  "/signup/page": "app/signup/page.js"
 }
