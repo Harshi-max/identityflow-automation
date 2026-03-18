@@ -14,7 +14,8 @@ import {
   Menu,
   X,
   User,
-  Settings
+  Settings,
+  Box
 } from 'lucide-react'
 
 const navigation = [
@@ -49,7 +50,7 @@ export default function Navigation() {
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/dashboard" className="flex items-center">
-                <Shield className="h-8 w-8 text-blue-600" />
+                <Box className="h-8 w-8 text-blue-600" />
                 <span className="ml-2 text-xl font-bold text-gray-900">IdentityFlow</span>
               </Link>
             </div>
