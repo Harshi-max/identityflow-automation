@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Shield, Mail, CheckCircle2 } from 'lucide-react'
@@ -14,21 +14,16 @@ export default function Verify() {
   const [message, setMessage] = useState('')
   const [mockCode, setMockCode] = useState<string | null>(null)
 
-  const loadMockCode = (email: string) => {
+  const updateMockCode = useCallback((email: string) => {
     try {
       const stored = localStorage.getItem('identityflow_verifications')
-      if (!stored) return null
+      if (!stored) return
       const map = JSON.parse(stored) as Record<string, string>
-      return map[email.toLowerCase()] || null
+      setMockCode(map[email.toLowerCase()] || null)
     } catch {
-      return null
+      setMockCode(null)
     }
-  }
-
-  const updateMockCode = (email: string) => {
-    const code = loadMockCode(email)
-    setMockCode(code)
-  }
+  }, [])
 
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -52,7 +47,7 @@ export default function Verify() {
     if (email) {
       updateMockCode(email)
     }
-  }, [email])
+  }, [email, updateMockCode])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

@@ -98,7 +98,7 @@ export default function Approvals() {
                 <div className="flex">
                   <div className="ml-3">
                     <p className="text-sm text-yellow-800">
-                      You don't have permission to approve requests. Only Managers, Admins, and HR can approve requests.
+                      You don&apos;t have permission to approve requests. Only Managers, Admins, and HR can approve requests.
                     </p>
                   </div>
                 </div>
