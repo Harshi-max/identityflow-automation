@@ -2,7 +2,10 @@
 
 A **Hackathon-ready Self-Service Identity Lifecycle Automation Platform** that automates the **Joiner–Mover–Leaver (JML) employee lifecycle**. The platform simulates enterprise Identity and Access Management workflows while remaining **fully safe (no connection to real IAM systems)**.
 
-
+## Demo Link
+[Watch Demo](https://drive.google.com/file/d/1HtKJLOQKcqELJbxl47tk2GXGitm-wLnQ/view?usp=sharing)
+## LIVE LINK
+[Visit](https://identityflow-automation-p6bz.vercel.app/)
 ## 📋 Problem Statement
 
 Organizations struggle with manual identity lifecycle management leading to:
